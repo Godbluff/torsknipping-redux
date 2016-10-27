@@ -17,12 +17,10 @@ Object.size = function(obj) {
 
 // Some dummy data for testing.
 const DummyResult = {
-  1: [3,7,8,16,21,28,33],
-  2: [2,6,12,15,17,28,32]
+  1: [3,7,8,16,21,28,33,11],
+  2: [2,6,12,15,17,28,32,22]
 };
-
-const sampleRow = [2,6,15,12,21,27,33];
-let scoreRow  = [];
+const scoreRow  = [];
 let divOut = [];
 
 class Results extends Component {
@@ -39,10 +37,12 @@ class Results extends Component {
   // Odds: 1 rett: 2.60, 2 rette: 3.17, 3 rette: 8.76, 4 rette: 52.55, 5 rette: 729.84, 6 rette: 28463, 7 rette: 5379616
   rowChecker(row){
     let correctNumbers = 0;
-    DummyResult[2].map((num)=>{
-      if(row.includes(num)){correctNumbers++}
+    let correctAdds = 0;
+    DummyResult[1].map((num, i)=>{
+      if(row.includes(num) && i <= 6){ correctNumbers++; }
+      if(row.includes(num) && i > 6){ correctAdds++; }
     });
-    return correctNumbers;
+    return [correctNumbers, correctAdds];
 
   }
 
@@ -51,7 +51,8 @@ class Results extends Component {
     for(let i = 1; i <= 10; i++){
       let rowName = 'row' + i;
       scoreRow.push(this.rowChecker(this.props.numbers[rowName]));
-      divOut.push(<div> {rowName} has {this.rowChecker(this.props.numbers[rowName])} correct numbers.</div>);
+      const checkResult = this.rowChecker(this.props.numbers[rowName]);
+      divOut.push(<div key={i}> {'Denne uken ville rekke ' + i} hatt {checkResult[0]} rette og {checkResult[1]} tillegstall. Dette gir {Math.pow(checkResult[0], checkResult[0])} poeng.</div>);
     }
   }
 
@@ -66,6 +67,10 @@ class Results extends Component {
     );
   }
 }
+
+Results.propTypes = {
+  numbers: React.PropTypes.object.isRequired
+};
 
 function mapStateToProps(state, ownProps){
   return {

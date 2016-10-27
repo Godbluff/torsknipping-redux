@@ -74,12 +74,14 @@ class CouponFetch extends Component {
     const validClass = "glyphicon glyphicon-remove-circle validate-mail red";
     const invalidClass = "glyphicon glyphicon glyphicon-ok-circle validate-mail green";
     return(
-      <div className="col-sm-12 text-center">
-        <h3>Hent tidligere innsendte tall.</h3>
-        <input className="form-control mail-input half"  placeholder="Epost addresse å hente nippetukong for." onChange={this.handleChange} value={this.state.text} type="text"/>
-        <div className={this.state.emailValid ? invalidClass : validClass}></div>
-        <button className="btn btn-lg btn-success resetbutton small_submit" onClick={this.onFetch}>Hent Nippetukongen Din</button>
-        <div>{this.state.alert}</div>
+      <div className="fetch-container">
+
+        <button className="button yellow" onClick={this.onFetch}>
+            <input className="form-control mail-input fetch-input"  placeholder="Epost addresse å hente nippetukong for." onChange={this.handleChange} value={this.state.text} type="text"/>
+            <div className={this.state.emailValid ? invalidClass : validClass}></div>
+            <div className="price glyphicon glyphicon-log-in"></div>
+        </button>
+        <div className="errormessage">{this.state.alert}</div>
       </div>
     );
   }

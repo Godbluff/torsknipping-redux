@@ -5,8 +5,11 @@ import Chart from '../components/Chart';
 
 const chartOptions = {
   chart: {
-    type: 'column',
-    height: 300
+    type: 'bar',
+    height: 400,
+    width: 400,
+    polar: true,
+    borderRadius: 20
   },
   title: {
     text: 'Talldistribusjon'
@@ -19,13 +22,13 @@ const chartOptions = {
       '1','2','3','4','5','6','7','8','9',
       '10','11','12','13','14','15','16','17','18','19',
       '20','21','22','23','24','25','26','27','28','29',
-      '30','31','32','33','34'],
+      '30','31','32','33','34',''],
     crosshair: true
   },
   yAxis: {
     min: 0,
     title: {
-      text: 'Rekker'
+      text: ''
     },
     maxStaggerLines: 1,
     allowDecimals: false,
@@ -34,8 +37,10 @@ const chartOptions = {
     }
   },
 
+
+
   series: [{
-    animation: false,
+    animation: true,
     name: 'Tallgjentagelse',
     data: [
       ['1', 0],
@@ -71,7 +76,8 @@ const chartOptions = {
       ['31', 0],
       ['32', 0],
       ['33', 0],
-      ['34', 0]
+      ['34', 0],
+      []
     ]
   }]
 
@@ -95,7 +101,12 @@ class ChartContainer extends Component {
     }
 
     return (
-      <div className="col-sm-8 jumbotron" style={{'height': '400px'}}>
+      <div style={{
+        'height': '400px',
+        'width': '400px',
+        'margin': 'auto',
+        'borderRadius': '20px',
+        'overflow': 'hidden'}}>
         <Chart container={'highchart'} options={chartOptions}/>
       </div>
     );

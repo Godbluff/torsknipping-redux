@@ -7,11 +7,15 @@ const RowListing = React.createClass({
     //selectedNumbers passed from store. Max 7 Numbers.
     const selectedNumbers = this.props.selectRow;
     const numberstyle = "ball";
+    const numberstyleAdd = "ball add";
 
     // Create Selected Number Elements.
     const numbersRow = selectedNumbers.map((elements, i) =>
-        <RowNumbers className={numberstyle} number={selectedNumbers[i]} key={i} />
+        i <= 6
+          ? <RowNumbers className={numberstyle} number={selectedNumbers[i]} key={i} />
+          : <RowNumbers className={numberstyleAdd} number={selectedNumbers[i]} key={i} />
       );
+
 
     //DOM output of array
     return(
@@ -25,9 +29,6 @@ const RowListing = React.createClass({
 
 RowListing.propTypes = {
   selectRow: React.PropTypes.array,
-  className: React.PropTypes.string.isRequired,
-  number: React.PropTypes.number.isRequired,
-  key: React.PropTypes.number.isRequired
 };
 
 export default RowListing;

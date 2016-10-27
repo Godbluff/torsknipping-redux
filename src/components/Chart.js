@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import Highcharts from 'highcharts/highstock';
+import Highcharts from 'highcharts';
+import HighChartsMore from 'highcharts/highcharts-more';
+HighChartsMore(Highcharts);
 
 class Chart extends Component {
   constructor(props) {
@@ -8,22 +10,22 @@ class Chart extends Component {
   // When the DOM is ready, create the chart.
   componentDidMount() {
     // Extend Highcharts with modules
-    if (this.props.modules) {
-      this.props.modules.forEach(function (module) {
-        module(Highcharts);
-      });
-    }
+//    if (this.props.modules) {
+//      this.props.modules.forEach(function (module) {
+//        module(Highcharts);
+//      });
+//    }
     this.chart = new Highcharts[this.props.type || "Chart"](
       this.props.container,
       this.props.options
     );
   }
   componentDidUpdate(){
-    if (this.props.modules) {
-      this.props.modules.forEach(function (module) {
-        module(Highcharts);
-      });
-    }
+//    if (this.props.modules) {
+//      this.props.modules.forEach(function (module) {
+//        module(Highcharts);
+//      });
+//    }
     this.chart = new Highcharts[this.props.type || "Chart"](
       this.props.container,
       this.props.options
@@ -42,10 +44,9 @@ class Chart extends Component {
 }
 
 Chart.propTypes = {
-  modules: React.PropTypes.shape,
+  container: React.PropTypes.string.isRequired,
   options: React.PropTypes.object.isRequired,
-  type: React.PropTypes.object.isRequired,
-  container: React.PropTypes.string.IsRequired
+  type: React.PropTypes.string
 };
 
 export default Chart;
