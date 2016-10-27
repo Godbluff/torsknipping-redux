@@ -8,6 +8,7 @@ import AutoFill  from '../components/AutoFill';
 import CouponFetch from '../components/CouponFetch';
 import Head from '../containers/Head';
 import ChartContainer from '../containers/ChartContainer';
+import Results from '../components/Results';
 
 class TippApp extends Component{
 
@@ -18,13 +19,18 @@ class TippApp extends Component{
           <Head/>
           <NumbersContainer />
         </div>
-        <div className="col-sm-12 jumbotron">
+        <div className="col-sm-4 jumbotron">
           <AutoFill />
           <ResetButton />
           <SubmissionForm />
           <CouponFetch />
         </div>
-        <ChartContainer />
+        <div>
+          <ChartContainer />
+        </div>
+        <div className="col-sm-12 jumbotron">
+          <Results/>
+        </div>
       </div>
     );
   }

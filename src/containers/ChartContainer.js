@@ -5,7 +5,8 @@ import Chart from '../components/Chart';
 
 const chartOptions = {
   chart: {
-    type: 'column'
+    type: 'column',
+    height: 300
   },
   title: {
     text: 'Talldistribusjon'
@@ -15,16 +16,26 @@ const chartOptions = {
   },
   xAxis: {
     categories: [
-      '1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34'],
+      '1','2','3','4','5','6','7','8','9',
+      '10','11','12','13','14','15','16','17','18','19',
+      '20','21','22','23','24','25','26','27','28','29',
+      '30','31','32','33','34'],
     crosshair: true
   },
   yAxis: {
     min: 0,
     title: {
       text: 'Rekker'
+    },
+    maxStaggerLines: 1,
+    allowDecimals: false,
+    labels: {
+      step: 1
     }
   },
+
   series: [{
+    animation: false,
     name: 'Tallgjentagelse',
     data: [
       ['1', 0],
@@ -69,27 +80,31 @@ const chartOptions = {
 class ChartContainer extends Component {
 
   render(){
+    // Destroy previous stats.
     for(let i = 0; i <= 33; i++){
       chartOptions.series[0].data[i][1] = 0;
     }
+
+    // Insert new stats
     for(let i = 1; i <= 10; i++){
       let rowName = 'row' +i;
       this.props.numbers[rowName].map((num)=> {
-        let oldVal = chartOptions.series[0].data[num-1][1];
-        chartOptions.series[0].data[num-1][1] = oldVal +1;
+        let oldVal = chartOptions.series[0].data[num - 1][1];
+        chartOptions.series[0].data[num - 1][1] = oldVal + 1;
       });
     }
-    //Pattern to insert lottery numbers into statistics.
-    console.log(chartOptions.series[0].data[0][1]);
-    console.log(chartOptions.series[0]);
 
     return (
-      <div className="col-sm-12 jumbotron">
+      <div className="col-sm-8 jumbotron" style={{'height': '400px'}}>
         <Chart container={'highchart'} options={chartOptions}/>
       </div>
-    )
+    );
   }
 }
+
+ChartContainer.propTypes = {
+  numbers: React.PropTypes.object.isRequired
+};
 
 function mapStateToProps(state, ownProps){
   return {

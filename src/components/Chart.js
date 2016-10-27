@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Highcharts from 'highcharts/highstock';
+
 class Chart extends Component {
   constructor(props) {
     super(props);
@@ -18,7 +19,6 @@ class Chart extends Component {
     );
   }
   componentDidUpdate(){
-    console.log('Did a re-render of the chart');
     if (this.props.modules) {
       this.props.modules.forEach(function (module) {
         module(Highcharts);
@@ -40,4 +40,12 @@ class Chart extends Component {
     return React.createElement('div', { id: this.props.container });
   }
 }
+
+Chart.propTypes = {
+  modules: React.PropTypes.shape,
+  options: React.PropTypes.object.isRequired,
+  type: React.PropTypes.object.isRequired,
+  container: React.PropTypes.string.IsRequired
+};
+
 export default Chart;

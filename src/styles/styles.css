@@ -242,3 +242,57 @@ body{
   text-shadow: 0px 0px 5px white;
 
 }
+
+.ball {
+  display: block;
+  background: black;
+  margin: 0;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  background: radial-gradient(circle at 20px 20px, #ff5c5c, rgb(49, 0, 0));
+}
+.ball p{
+  color: white;
+  font-size: 26px !important;
+  font-family: Arial;
+  line-height: 60px;
+  font-weight: bold !important;
+}
+
+.ball .shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+  -webkit-transform: rotateX(60deg) translateZ(-60px);
+  -moz-transform: rotateX(60deg) translateZ(-15px);
+  -ms-transform: rotateX(60deg) translateZ(-90px);
+  -o-transform: rotateX(60deg) translateZ(-90px);
+  transform: rotateX(60deg) translateZ(-30px);
+  z-index: -1;
+}
+.stage {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  -webkit-perspective: 1200px;
+  -moz-perspective: 1200px;
+  -ms-perspective: 1200px;
+  -o-perspective: 1200px;
+  perspective: 1200px;
+  -webkit-perspective-origin: 50% 50%;
+  -moz-perspective-origin: 50% 50%;
+  -ms-perspective-origin: 50% 50%;
+  -o-perspective-origin: 50% 50%;
+  perspective-origin: 50% 50%;
+  margin: 0px 10px 10px 0px;
+}
+/*body {
+  width: 300px;
+  margin: 20px auto;
+  background: linear-gradient(to bottom, rgba(100, 100, 100, 0.2) 0%, rgba(255, 255, 255, 0.5) 40%, #ffffff 100%);
+  background-repeat: no-repeat;
+}*/

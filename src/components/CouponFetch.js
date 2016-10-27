@@ -58,7 +58,6 @@ class CouponFetch extends Component {
           url: `https://gratislotto-api.herokuapp.com/api/Tickets?filter[where][email]=${this.state.text}`
         })
           .then((response) => {
-            console.log(response);
             delete response.data[0].id;
             delete response.data[0].registeredTimestamp;
             this.props.dispatch(numbersActions.resetNumbers());

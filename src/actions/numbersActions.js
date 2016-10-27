@@ -19,5 +19,5 @@ export function updateEmail(email){
 export function fillNumbers(allstate) {
   return{
     type: 'FILL_NUMBERS', allstate
-  }
+  };
 }

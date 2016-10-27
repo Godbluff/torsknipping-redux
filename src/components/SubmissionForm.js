@@ -10,7 +10,8 @@ const chance = new Chance();
 const SubmissionForm = React.createClass({
   propTypes: {
     numbers: React.PropTypes.object.isRequired,
-    className: React.PropTypes.string
+    className: React.PropTypes.string,
+    dispatch: React.PropTypes.func
   },
 
   getInitialState(){

@@ -16,7 +16,9 @@ class AutoFill extends Component {
     for(let i = 1; i <= 10; i++){
       let randomRow = chance.unique(chance.natural, 7, {min: 1, max: 34}).sort((a, b) => a - b);
       let rowName = 'row' + i;
-      randomRow.map((num) => {this.props.dispatch(numbersActions.selectNumber(num, rowName));});
+      randomRow.map((num) => {
+        this.props.dispatch(numbersActions.selectNumber(num, rowName));
+      });
     }
   }
 
