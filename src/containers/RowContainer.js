@@ -7,7 +7,7 @@ class RowContainer extends Component{
   render(){
     // console.log('Passing ' + this.props.numbers + ' to update selected list');
     return(
-      <div className="jumbotron col-sm-12">
+      <div className="col-sm-12">
         <RowListing selectRow={this.props.numbers}/>
       </div>
 

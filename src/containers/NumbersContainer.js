@@ -4,8 +4,7 @@ import NumbersList from '../components/NumbersList';
 class NumbersContainer extends Component{
   render(){
     return(
-      <div className="jumbotron col-sm-12 lotterybg text-center noselect">
-        <div>
+        <div className="rowbox-container text-center noselect">
           <NumbersList rowNumber={1} />
           <NumbersList rowNumber={2} />
           <NumbersList rowNumber={3} />
@@ -17,7 +16,6 @@ class NumbersContainer extends Component{
           <NumbersList rowNumber={9} />
           <NumbersList rowNumber={10} />
         </div>
-      </div>
     );
   }
 }

@@ -9,7 +9,8 @@ const initialState = {
   row8: [],
   row9: [],
   row10: [],
-  email: ''
+  email: '',
+
 };
 
 export default function numbersReducer(state = initialState, action) {

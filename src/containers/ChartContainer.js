@@ -27,10 +27,11 @@ const chartOptions = {
   },
   yAxis: {
     min: 0,
+    maxPadding: 0,
     title: {
       text: ''
     },
-    maxStaggerLines: 1,
+    maxStaggerLines: 2,
     allowDecimals: false,
     labels: {
       step: 1
@@ -106,7 +107,7 @@ class ChartContainer extends Component {
         'width': '400px',
         'margin': 'auto',
         'borderRadius': '20px',
-        'overflow': 'hidden'}}>
+        'overflow': 'hidden', 'float' : 'left'}}>
         <Chart container={'highchart'} options={chartOptions}/>
       </div>
     );

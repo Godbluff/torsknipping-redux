@@ -19,8 +19,7 @@ const RowListing = React.createClass({
 
     //DOM output of array
     return(
-      <div className="col-sm-12 text-center">
-        <h2>Vinnertall</h2>
+      <div className="col-sm-12 text-center small-balls element-inline">
         {numbersRow}
       </div>
     );

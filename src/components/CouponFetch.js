@@ -75,7 +75,6 @@ class CouponFetch extends Component {
     const invalidClass = "glyphicon glyphicon glyphicon-ok-circle validate-mail green";
     return(
       <div className="fetch-container">
-
         <button className="button yellow" onClick={this.onFetch}>
             <input className="form-control mail-input fetch-input"  placeholder="Epost addresse å hente nippetukong for." onChange={this.handleChange} value={this.state.text} type="text"/>
             <div className={this.state.emailValid ? invalidClass : validClass}></div>

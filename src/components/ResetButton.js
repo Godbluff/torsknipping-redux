@@ -18,8 +18,11 @@ class ResetButton extends Component {
   render(){
     // DOM output
     return(
-      <div>
-        <button className="btn btn-lg btn-danger resetbutton" onClick={this.resetNumbers}>Fjern Alle Tall</button>
+      <div className="element-inline">
+        <button className="button red" onClick={this.resetNumbers}>
+          <span className="title">Fjern Alle Tall</span>
+          <span className="price glyphicon glyphicon-trash"></span>
+        </button>
       </div>
     );
   }
