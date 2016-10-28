@@ -24,7 +24,7 @@ class AutoFill extends Component {
 
   render(){
     return(
-      <div className="element-inline">
+      <div className="element-inline bottom-button">
         <button className="button green" onClick={this.preFill}><span className="title">Automagisk utfylling</span><span className="price glyphicon glyphicon-refresh"></span></button>
       </div>
     );

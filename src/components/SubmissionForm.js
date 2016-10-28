@@ -108,14 +108,16 @@ const SubmissionForm = React.createClass({
 
     //DOM output of array
     return(
+
+
     <div className="fetch-container">
-      <button className="button yellow" onClick={this.postNumbers}>
-        <input className="form-control mail-input fetch-input"  placeholder="Lagre nippetukong til mail" onChange={this.handleChange} value={this.state.text} type="text"/>
-        <div className={this.state.emailValid ? invalidClass : validClass}></div>
-        <div className="price glyphicon glyphicon-log-in"></div>
+      <input className="form-control mail-input fetch-input"  placeholder="Epost addresse å hente nippetukong for." onChange={this.handleChange} value={this.state.text} type="text"/>
+      <button className="button yellow input" onClick={this.postNumbers}>
+        <span className="title">Lagre Kutong</span>
+        <span className="price glyphicon glyphicon-save"></span>
       </button>
       <div className="errormessage">{this.state.alert}</div>
-    </div>
+  </div>
     );
   }
 });
