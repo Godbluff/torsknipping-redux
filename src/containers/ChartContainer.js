@@ -5,17 +5,12 @@ import Chart from '../components/Chart';
 
 const chartOptions = {
   chart: {
-    type: 'bar',
-    height: 400,
-    width: 400,
-    polar: true,
+    type: 'column',
+    height: 150,
     borderRadius: 20
   },
   title: {
     text: 'Talldistribusjon'
-  },
-  subtitle: {
-    text: 'Kilde: Dine nippetukongrekker.'
   },
   xAxis: {
     categories: [
@@ -26,21 +21,15 @@ const chartOptions = {
     crosshair: true
   },
   yAxis: {
-    min: 0,
-    maxPadding: 0,
-    title: {
-      text: ''
-    },
-    maxStaggerLines: 2,
+    title: '',
+    endOnTick: true,
     allowDecimals: false,
-    labels: {
-      step: 1
-    }
+    tickInterval: 1,
+    margin: 0
   },
-
-
-
+  legend: {x: 9999, y: 9999},
   series: [{
+    stacking:'normal',
     animation: true,
     name: 'Tallgjentagelse',
     data: [
@@ -77,8 +66,7 @@ const chartOptions = {
       ['31', 0],
       ['32', 0],
       ['33', 0],
-      ['34', 0],
-      []
+      ['34', 0]
     ]
   }]
 
@@ -102,12 +90,7 @@ class ChartContainer extends Component {
     }
 
     return (
-      <div style={{
-        'height': '400px',
-        'width': '400px',
-        'margin': 'auto',
-        'borderRadius': '20px',
-        'overflow': 'hidden', 'float' : 'left'}}>
+      <div style={{'borderRadius': '20px'}}>
         <Chart container={'highchart'} options={chartOptions}/>
       </div>
     );

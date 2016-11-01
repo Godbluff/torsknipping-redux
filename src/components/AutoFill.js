@@ -4,6 +4,60 @@ import * as numbersActions from '../actions/numbersActions';
 
 const Chance = require('chance');
 const chance = new Chance();
+const DummyStats = {
+  "id": "ticket123",
+  "registeredDate": "2016-10-21",
+  "calcStartDate": "2005-01-21",
+  "calcEndDate": "2016-10-27",
+  "rows": 10,
+  "drawings": 123,
+  "drawingsWithWin": 23,
+  "drawingsWithoutWin": 100,
+  "rowsInDrawings": 1230,
+  "rowsWithWin": 234,
+  "balance": {
+    "total": {
+      "profit": 1000000,
+      "cost": 12345,
+      "profitVsCost": 987655
+    },
+    "rows": [
+      {
+        "rowNo": 7,
+        "profit": 1000000,
+        "cost": 1234,
+        "profitVsCost": 987655,
+        "winCount": 123
+      },
+      {
+        "rowNo": 4,
+        "profit": 1000,
+        "cost": 1234,
+        "profitVsCost": -11345,
+        "winCount": 0
+      }
+    ]
+  },
+  "wins": [
+    {
+      "matchType": "7",
+      "profit": 1000000,
+      "drawing": {
+        "date": "2015-01-10",
+        "numbers": [1, 2, 3, 4, 5, 6, 7],
+        "additionalNumbers": [8, 9],
+        "pricePerRow": 3
+      },
+      "matchingRows": [
+        {
+          "rowNo": 4,
+          "numbers": [1, 2, 3, 4, 5, 6, 7]
+        }
+      ]
+    }
+  ]
+};
+
 
 class AutoFill extends Component {
   constructor(props){
@@ -20,6 +74,7 @@ class AutoFill extends Component {
         this.props.dispatch(numbersActions.selectNumber(num, rowName));
       });
     }
+    this.props.dispatch(numbersActions.importStats(DummyStats));
   }
 
   render(){

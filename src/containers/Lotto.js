@@ -3,18 +3,18 @@ import NumbersContainer from '../containers/NumbersContainer';
 import '../styles/styles.css';
 import ActionsContainer from '../containers/ActionsContainer';
 import ThisWeek from '../containers/ThisWeek';
-import Head from '../containers/Head';
 
-class Main extends Component {
+class Lotto extends Component {
   render() {
     return (
-      <div>
-        <Head/>
-        {this.props.children}
+      <div className="lotterybg">
+        <ThisWeek link={'main/stats'} linkText={'Se Rekkestatistikk'}/>
+        <NumbersContainer />
+        <ActionsContainer/>
       </div>
     );
   }
 }
 
-export default Main;
+export default Lotto;
 

@@ -109,14 +109,13 @@ const SubmissionForm = React.createClass({
     //DOM output of array
     return(
 
-
     <div className="fetch-container">
       <input className="form-control mail-input fetch-input"  placeholder="Epost addresse å hente nippetukong for." onChange={this.handleChange} value={this.state.text} type="text"/>
       <button className="button yellow input" onClick={this.postNumbers}>
-        <span className="title">Lagre Kutong</span>
+        <span className="title">Send Kutong</span>
         <span className="price glyphicon glyphicon-save"></span>
       </button>
-      <div className="errormessage">{this.state.alert}</div>
+      <div className="errormessage">{this.state.alert}<br/>{this.state.incomplete}</div>
   </div>
     );
   }

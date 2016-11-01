@@ -45,8 +45,10 @@ export default function numbersReducer(state = initialState, action) {
         email: action.email
       };
 
-    case 'FILL_NUMBERS':
-      return action.allstate;
+    case 'FILL_STATS':
+      return {...state,
+        stats: action.allstats
+      };
 
 
     default:
