@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import * as numbersActions from '../actions/numbersActions';
 import '../styles/styles.css';
-import ChartContainer from '../containers/ChartContainer';
-import Results from '../components/Results';
 import ThisWeek from '../containers/ThisWeek';
 import StatsOverview from '../containers/StatsOverview';
 

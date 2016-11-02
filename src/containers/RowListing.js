@@ -27,7 +27,7 @@ const RowListing = React.createClass({
 });
 
 RowListing.propTypes = {
-  selectRow: React.PropTypes.array,
+  selectRow: React.PropTypes.array
 };
 
 export default RowListing;

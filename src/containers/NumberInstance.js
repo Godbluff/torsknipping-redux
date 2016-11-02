@@ -17,7 +17,7 @@ NumberInstance.propTypes = {
   className: React.PropTypes.string,
   crossed: React.PropTypes.string.isRequired,
   number: React.PropTypes.number.isRequired,
-  showNumber: React.PropTypes.func.isRequired,
+  showNumber: React.PropTypes.func.isRequired
 };
 
 export default NumberInstance;

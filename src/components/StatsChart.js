@@ -52,7 +52,7 @@ class ChartContainer extends Component {
 
     // Insert new stats
     for(let i = 0; i <= 9; i++){
-      chartOptions2.series[0].data.push(this.props.numbers.stats.balance.rows[i].profitVsCost);
+      chartOptions2.series[0].data.push(this.props.stats.balance.rows[i].profitVsCost);
     }
   }
 
@@ -61,7 +61,7 @@ class ChartContainer extends Component {
 
     // Insert new stats
     for(let i = 0; i <= 9; i++){
-      chartOptions2.series[0].data.push(this.props.numbers.stats.balance.rows[i].profitVsCost);
+      chartOptions2.series[0].data.push(this.props.stats.balance.rows[i].profitVsCost);
     }
   }
 
@@ -75,12 +75,12 @@ class ChartContainer extends Component {
 }
 
 ChartContainer.propTypes = {
-  numbers: React.PropTypes.object.isRequired
+  stats: React.PropTypes.object.isRequired
 };
 
 function mapStateToProps(state, ownProps){
   return {
-    numbers: state.numbers
+    stats: state.stats
   };
 }
 

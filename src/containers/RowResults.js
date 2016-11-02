@@ -38,7 +38,7 @@ RowResults.propTypes = {
 
 function mapStateToProps(state, ownProps){
   return {
-    stats: state.numbers.stats,
+    stats: state.stats,
     numbers: state.numbers
   };
 }

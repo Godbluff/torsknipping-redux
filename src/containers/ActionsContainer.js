@@ -15,7 +15,7 @@ class ActionsContainer extends Component {
           <div className="col-sm-12"><ChartContainer/></div>
           <div className="disclaimer">Torsk Nippings Gratis-Lotto er et produkt av ironisk distanse og teknisk nysjerrighet.<br/> De som må føle at tær er tråkket på henvises til nærmeste skobutikk.</div>
         </div>
-      )
+      );
   }
 }
 

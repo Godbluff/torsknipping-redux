@@ -16,6 +16,12 @@ export function updateEmail(email){
   };
 }
 
+export function fillNumbers(allstate) {
+  return{
+    type: 'FILL_NUMBERS', allstate
+  };
+}
+
 export function importStats(allstats) {
   return{
     type: 'FILL_STATS', allstats
