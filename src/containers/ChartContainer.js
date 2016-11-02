@@ -90,7 +90,7 @@ class ChartContainer extends Component {
     }
 
     return (
-      <div style={{'borderRadius': '20px'}}>
+      <div style={{'borderRadius': '20px', 'height': '150px'}}>
         <Chart container={'highchart'} options={chartOptions}/>
       </div>
     );

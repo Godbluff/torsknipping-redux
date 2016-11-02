@@ -7,9 +7,13 @@ class Front extends Component {
     return (
       <div className="front-bg">
         <div className="head-logo"></div>
+        <div className="separator-line"></div>
         <div className="front-desc">Torsk Nipping ønsker alle spillegale velkommen. Her kan det spilles vilt og hemningsløst uten noen kontroll overhodet. Her er det dog ingen penger og tjene, men til gjengjeld kan det heller ikke tapes noen penger.<br/>Vi gjør alt dette for gøy.<br/><br/>Under kan du gå inn og spille vårt første spill: Gratis-Lotto.</div>
-        <div className="button-game">
-          <div><Link to="main"><button className="button green title">Spill Gratis-Lotto!</button></Link></div>
+        <div className="front-desc">
+          <div className="button-game">
+            <div className="gratislotto-header">Gratis-Lotto</div>
+            <Link to="main"><button className="button green title">Spill Gratis-Lotto!</button></Link>
+          </div>
         </div>
       </div>
     );

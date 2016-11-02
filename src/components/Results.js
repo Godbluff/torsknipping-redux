@@ -79,3 +79,5 @@ function mapStateToProps(state, ownProps){
 }
 
 export default connect(mapStateToProps) (Results);
+
+//TODO Incorporate resultsGenerator and rowChecker in RowResults to properly display numbers for each row.

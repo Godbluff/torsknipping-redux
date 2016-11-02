@@ -289,9 +289,7 @@ body{
   box-shadow: inset 0px -1px 1px 0px rgba(255,255,255,0.2);
 }
 .front-bg{
-  background: #7474BF; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #7474BF , #348AC7); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #7474BF , #348AC7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: radial-gradient(at top left, #004e92, #000428);
   height: 100%;
   margin: 0;
 
@@ -299,8 +297,15 @@ body{
 .head-logo {
   height: 150px;
   width: 100%;
-  background: url(torsknipping_main.png) no-repeat center;
+  background:url(torsknipping_main.png) no-repeat center;
   background-size: auto 90%;
+}
+.separator-line{
+  width:80%;
+  height: 31px;
+  background: url(seprator.png) center no-repeat;
+  background-size: 100% 100%;
+  margin: 0 10%;
 }
 .front-desc{
   padding: 20px 50px;
