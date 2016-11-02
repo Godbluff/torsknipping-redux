@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/styles.css';
-import Head from '../containers/Head';
+require('../favicon.ico');
 
 class TippApp extends Component{
 
