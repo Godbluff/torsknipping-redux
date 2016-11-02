@@ -11,7 +11,8 @@ ReactGA.initialize('UA-86750634-1');
 const store = configureStore(window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 function fireTracking() {
-  ReactGA.pageview(window.location.hash);
+  ReactGA.set({ page: window.location.pathname });
+  ReactGA.pageview(window.location.pathname);
 }
 render(
   <Provider store={store}>
