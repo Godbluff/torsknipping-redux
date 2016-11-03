@@ -76,16 +76,20 @@ class ChartContainer extends Component {
 
   render(){
     // Destroy previous stats.
+    let newChartData = [];
     for(let i = 0; i <= 33; i++){
       chartOptions.series[0].data[i][1] = 0;
+      newChartData.push(['' + (i+1) + '', 0])
     }
-
     // Insert new stats
     for(let i = 1; i <= 10; i++){
       let rowName = 'row' +i;
       this.props.numbers[rowName].map((num)=> {
         let oldVal = chartOptions.series[0].data[num - 1][1];
         chartOptions.series[0].data[num - 1][1] = oldVal + 1;
+        //update routine test
+        let updatedValue = newChartData[num - 1][1];
+        newChartData[num - 1][1] = updatedValue +1;
       });
     }
 

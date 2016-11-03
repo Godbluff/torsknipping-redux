@@ -3,6 +3,7 @@ import axios from 'axios';
 import {connect} from 'react-redux';
 import * as numbersActions from '../actions/numbersActions';
 import Checkit from 'checkit';
+import ReactGA from 'react-ga';
 
 class CouponFetch extends Component {
   constructor(props){
@@ -55,7 +56,7 @@ class CouponFetch extends Component {
       ?
         axios({
           method: 'get',
-          url: `https://gratislotto-api.herokuapp.com/api/Tickets?filter[where][email]=${this.state.text}`
+          url: `https://gratislotto-api.herokuapp.com/api/Tickets?filter[where][email]=${this.state.text}/`
         })
           .then((response) => {
             delete response.data[0].id;
@@ -63,6 +64,10 @@ class CouponFetch extends Component {
             this.props.dispatch(numbersActions.resetNumbers());
             this.props.dispatch(numbersActions.fillNumbers(response.data[0]));
             this.checkAlert('Hværsågod! Tallene er på plass. Antagelig de samme som du lagret.');
+            ReactGA.event({
+              category: 'Retrieval',
+              action: 'Retrieved Numbers'
+            });
           })
           .catch((error) => {
             this.checkAlert(`Oooha! Ohha! Kjempetryn! Datakræsj og ruskete kode!`);

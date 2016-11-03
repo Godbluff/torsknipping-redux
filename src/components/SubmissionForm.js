@@ -3,6 +3,7 @@ import axios from 'axios';
 import {connect} from 'react-redux';
 import Checkit from 'checkit';
 import * as numbersActions from '../actions/numbersActions';
+import ReactGA from 'react-ga';
 
 const Chance = require('chance');
 const chance = new Chance();
@@ -87,6 +88,10 @@ const SubmissionForm = React.createClass({
           .then((response) => {
             this.checkAlert('Der var talla lagret. Lykke til.');
             console.log(response.statusText);
+            ReactGA.event({
+              category: 'Submission',
+              action: 'Submitted Numbers'
+            });
           })
           .catch((error) => {
             this.checkAlert('Jøye meg! Her gikk det skikkelig skeis. Prøv igjen.');
