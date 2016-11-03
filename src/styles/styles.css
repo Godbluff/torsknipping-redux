@@ -287,6 +287,9 @@ body{
   box-shadow: 10px 10px 10px black;
   z-index: 10;
   box-shadow: inset 0px -1px 1px 0px rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .front-bg{
   background: radial-gradient(at top left, #004e92, #000428);
@@ -324,7 +327,7 @@ body{
 }
 
 .gratislotto-header{
-  float: left; margin-left: 50px;
+  float: left; margin-left: 20px;
   font-size: 56px;
   color: cyan;
   height:100%;
@@ -542,6 +545,7 @@ body{
   margin-top: 0px;
   float: right;
   flex-grow: 0 !important;
+  min-width: 440px;
 }
 .fetch-input{
   float: left;
@@ -609,20 +613,94 @@ body{
   text-align: center;
   padding:5px;
   color: #9c9cdc;
-
-background: #141E30; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #141E30 , #243B55); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #141E30 , #243B55); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: radial-gradient(at top left, #004e92, #000428);
 
 }
-.statsbox{
-  border-radius: 20px;
-  border: 1px solid rgba(156,156,220,1);
-  box-shadow: 0px 0px 2px rgba(200,200,256,0.5);
-  margin: 2px;
-  padding: 10px;
+.statsbox {
+  box-shadow: 0px 0px 5px rgba(200, 200, 256, 0.5);
+  margin: 5px 15px;
+  color: black;
+  background: white;
+  min-width: 242px;
+}
+.statsbox .boxnumber{
+  background: red;
+  color: white;
+  font-size: 20px;
+  width: 20%;
+  min-width: 40px;
+  display: inline-block;
+  vertical-align: top;
+  height: 30px;
+}
+.statsbox .boxrow{
+  width: 80%;
+  min-width: 175px;
+  background: darkblue;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  display: inline-block;
+  vertical-align: top;
+}
+.boxrow div{
+  width: 25px;
+  text-align: center;
+  float: left;
+  line-height:30px;
+}
+.statsbox-row{
+  position: relative;
+  width: 100%;
+  background: -moz-linear-gradient(top, rgba(242,242,242,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(242,242,242,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(242,242,242,1) 0%,rgba(229,229,229,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  height: 20px;
+}
+.statsbox-header{
+  width: 55%;
+  padding-left: 5%;
+  text-align: left;
+  float: left;
+  height: 20px;
+}
+.statsbox-entry{
+  width: 45%;
+  padding-right: 5%;
+  text-align: right;
+  float: left;
+  height: 20px;
 }
 
+.banner{
+  position: relative;
+  background: orange;
+  height: 20px;
+  margin-left: -10px;
+  margin-right: -10px;
+  -webkit-box-shadow: 0px 0px 10px black;
+  -moz-box-shadow: 0px 0px 10px black;
+  box-shadow: 0px 0px 10px black;
+  margin-top:5px;
+}
+.banner-left{
+  width: 10px;
+  height: 20px;
+  position: absolute;
+  background: orange;
+  left: 10px;
+  transform: skewY(-45deg);
+  bottom: 10px;
+}
+.banner-right{
+  width: 10px;
+  height: 20px;
+  position: absolute;
+  background: orange;
+  right: 10px;
+  transform: skewY(45deg);
+  bottom: 10px;
+}
 
 /* Bootstrap Additions for 5 columns */
 .col-xs-5ths,

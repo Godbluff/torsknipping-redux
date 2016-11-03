@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {connect} from 'react-redux';
+import { Navigation } from 'react-router'
 import * as numbersActions from '../actions/numbersActions';
 import Checkit from 'checkit';
 import ReactGA from 'react-ga';
@@ -11,6 +12,7 @@ class CouponFetch extends Component {
     this.onFetch = this.onFetch.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.checkAlert = this.checkAlert.bind(this);
+    this.getStats = this.getStats.bind(this);
     this.state = {
       emailValid : false,
       text: '',
@@ -67,12 +69,25 @@ class CouponFetch extends Component {
               category: 'Retrieval',
               action: 'Retrieved Numbers'
             });
+            this.getStats();
           })
           .catch((error) => {
-            this.checkAlert(`Oooha! Ohha! Kjempetryn! Datakræsj og ruskete kode!`);
-            console.log
+            this.checkAlert(`Oooha! Oooha! Kjempetryn! Datakræsj og ruskete kode!`);
           })
       : this.checkAlert('Nåja. Må være litt nøyere med epost addressa.');
+  }
+
+  getStats(){
+    axios({
+      method: 'get',
+      url: `https://gratislotto-api.herokuapp.com/api/Tickets/${this.props.numbers.id}/statistics?calcStartDate=1985-05-01&calcEndDate=2016-10-10`
+    })
+      .then((response) => {
+        this.props.dispatch(numbersActions.importStats(response.data.statistics));
+      })
+      .catch((error) => {
+        console.log(error)
+      })
   }
 
   render(){
@@ -95,4 +110,10 @@ CouponFetch.propTypes = {
   dispatch: React.PropTypes.func.isRequired
 };
 
-export default connect()(CouponFetch);
+function mapStateToProps(state, ownProps){
+  return {
+    numbers: state.numbers
+  };
+}
+
+export default connect(mapStateToProps)(CouponFetch);

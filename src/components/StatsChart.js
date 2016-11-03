@@ -28,6 +28,13 @@ const chartOptions2 = {
     }
   }],
   yAxis: {
+    tickPositioner: function () {
+
+      var maxDeviation = Math.ceil(Math.max(Math.abs(this.dataMax), Math.abs(this.dataMin)));
+      var halfMaxDeviation = Math.ceil(maxDeviation / 2);
+
+      return [-maxDeviation-100, -halfMaxDeviation-50, 0, halfMaxDeviation+15, maxDeviation+100];
+    },
     title: {
       text: null
     }
@@ -46,28 +53,30 @@ const chartOptions2 = {
 
 };
 
+
+
 class ChartContainer extends Component {
   componentWillMount(){
     chartOptions2.series[0].data = [];
-
     // Insert new stats
     for(let i = 0; i <= 9; i++){
-      chartOptions2.series[0].data.push(this.props.stats.balance.rows[i].profitVsCost);
+      let rowName = 'row' + (i+1);
+      chartOptions2.series[0].data.push(this.props.stats.balance[rowName].profitVsCost);
     }
   }
 
   componentWillUpdate(){
     chartOptions2.series[0].data = [];
-
     // Insert new stats
     for(let i = 0; i <= 9; i++){
-      chartOptions2.series[0].data.push(this.props.stats.balance.rows[i].profitVsCost);
+      let rowName = 'row' + (i+1);
+      chartOptions2.series[0].data.push(this.props.stats.balance[rowName].profitVsCost);
     }
   }
 
   render(){
     return (
-      <div style={{'borderRadius': '20px'}} className="col-sm-4">
+      <div style={{'borderRadius': '20px'}} className="col-sm-12">
         <Chart container={'highchart2'} options={chartOptions2}/>
       </div>
     );
