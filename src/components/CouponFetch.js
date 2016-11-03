@@ -56,7 +56,7 @@ class CouponFetch extends Component {
       ?
         axios({
           method: 'get',
-          url: `https://gratislotto-api.herokuapp.com/api/Tickets?filter[where][email]=${this.state.text}/`
+          url: `https://gratislotto-api.herokuapp.com/api/Tickets?filter[where][email]=${this.state.text}`
         })
           .then((response) => {
             delete response.data[0].id;
@@ -71,6 +71,7 @@ class CouponFetch extends Component {
           })
           .catch((error) => {
             this.checkAlert(`Oooha! Ohha! Kjempetryn! Datakræsj og ruskete kode!`);
+            console.log
           })
       : this.checkAlert('Nåja. Må være litt nøyere med epost addressa.');
   }
