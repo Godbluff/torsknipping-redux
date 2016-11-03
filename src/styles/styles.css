@@ -601,9 +601,12 @@ body{
 }
 .top-result .small-balls {
   margin-top: 2px;
-
-
 }
+#vupct{
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .statslink{
   margin-top: 6px;
   width: 200px;
@@ -616,15 +619,21 @@ body{
   background: radial-gradient(at top left, #004e92, #000428);
 
 }
+.overview-box{
+  display: inline-block;
+  padding: 20px;
+  background: linear-gradient(to bottom, rgba(242,242,242,1) 0%,rgba(229,229,229,1) 100%);
+  box-shadow: inset -1px -1px 1px rgba(0,0,0,0.1), inset 1px 1px 1px white;
+}
 .statsbox {
-  box-shadow: 0px 0px 5px rgba(200, 200, 256, 0.5);
   margin: 5px 15px;
   color: black;
-  background: white;
+  background: none;
   min-width: 242px;
 }
 .statsbox .boxnumber{
-  background: red;
+  background: radial-gradient(at top right, #ff0000 , #d53a3a);
+  font-weight: bold;
   color: white;
   font-size: 20px;
   width: 20%;
@@ -632,16 +641,21 @@ body{
   display: inline-block;
   vertical-align: top;
   height: 30px;
+  text-shadow: 0px 0px 1px black;
+  box-shadow: inset 1px 1px 1px rgba(255,255,255,0.2), inset -3px -3px 2px -1px rgba(0,0,0,0.1);
 }
 .statsbox .boxrow{
   width: 80%;
   min-width: 175px;
-  background: darkblue;
+  background: radial-gradient(at top left, #00d2ff , #3a7bd5);
   color: white;
   font-weight: bold;
   font-size: 14px;
-  display: inline-block;
   vertical-align: top;
+  border-top-right-radius: 5px;
+  text-shadow: 0px 0px 1px black;
+  display: inline-flex;
+  justify-content: space-around;
 }
 .boxrow div{
   width: 25px;
@@ -657,6 +671,7 @@ body{
   background: linear-gradient(to bottom, rgba(242,242,242,1) 0%,rgba(229,229,229,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   height: 20px;
 }
+
 .statsbox-header{
   width: 55%;
   padding-left: 5%;
@@ -681,7 +696,7 @@ body{
   -webkit-box-shadow: 0px 0px 10px black;
   -moz-box-shadow: 0px 0px 10px black;
   box-shadow: 0px 0px 10px black;
-  margin-top:5px;
+  margin-top:0px;
 }
 .banner-left{
   width: 10px;

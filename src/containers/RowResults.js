@@ -16,7 +16,7 @@ class RowResults extends Component {
             <div className="statsbox-row">
               <div className="statsbox-header">Fortjeneste:</div>
               <div className="statsbox-entry">{stats.balance[rowName].profit}</div></div>
-            <div className="statsbox-row">
+            <div className="statsbox-row" style={{'paddingBottom': '25px'}}>
               <div className="statsbox-header">Kostnad:</div>
               <div className="statsbox-entry">{stats.balance[rowName].cost}</div>
             </div>

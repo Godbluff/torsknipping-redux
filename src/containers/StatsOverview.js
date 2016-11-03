@@ -127,20 +127,22 @@ class StatsOverview extends Component {
     return(
       <div style={{'textAlign': 'center', 'display': 'block'}}>
         <h3>Resultater</h3>
-        <Chart container="vupct" options={winPercentageOptions}/>
+        <div className="col-lg-12">
+          <Chart container="vupct" options={winPercentageOptions}/>
+        </div>
         <div className="statsbox col-sm-12">
 
-          <div style={{'display': 'inline-block', 'padding': '20px'}}>
+          <div className="overview-box">
             <div>Antall rekker: {stats.rowCount}</div>
             <div>Fullførte trekninger: {stats.drawCount}</div>
             <div>Rekker med utbetalinger: {stats.rowsWithWin}</div>
           </div>
-          <div style={{'display': 'inline-block', 'padding': '20px'}}>
+          <div className="overview-box">
             <div>Utbetaling: {stats.balance.total.profit}</div>
             <div>Kostnad: {stats.balance.total.cost}</div>
             <div>Overskudd: {stats.balance.total.profitVsCost}</div>
           </div>
-          <div style={{'display': 'inline-block', 'padding': '20px'}}>
+          <div className="overview-box">
             <div>Trenkninger med utbetaling: {stats.drawsWithWinCount}</div>
             <div>Trekninger uten utbetaling: {stats.drawsWithoutWinCount}</div>
             <div>Rekker trukket: {stats.rowsInDraws}</div>
